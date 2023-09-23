@@ -89,6 +89,11 @@ function main() {
     new Shader(gl.FRAGMENT_SHADER, require('./shaders/custom-frag.glsl')),
   ]);
 
+  const backgroundShader = new ShaderProgram([
+    new Shader(gl.VERTEX_SHADER, require('./shaders/flat-vert.glsl')),
+    new Shader(gl.FRAGMENT_SHADER, require('./shaders/flat-frag.glsl')),
+  ]);
+
   
   let time = 0.0;
   // This function will be called every frame
@@ -126,7 +131,7 @@ function main() {
       //cube,
     ], [0,0,0,0], controls.Scale, controls.Persistency, controls.Transparency);
     stats.end();
-
+    renderer.render(camera, customShader, [icosphere, square], [0,0,0,0], controls.Scale, controls.Persistency, controls.Transparency);
     // Tell the browser to call `tick` again whenever it renders a new frame
     requestAnimationFrame(tick);
   }

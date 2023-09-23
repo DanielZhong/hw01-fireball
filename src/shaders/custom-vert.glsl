@@ -128,7 +128,7 @@ float verticalMotion(float y) {
 
 float directionalDisplacementBoost(vec3 normal, vec3 position) {
     float boostFromNormal = max(normal.y, 0.0);
-    float boostFromNoise = OctavePerlin(position * 0.5 + vec3(u_Time, u_Time, u_Time), 2, 0.5) * 0.1;
+    float boostFromNoise = OctavePerlin(position * 0.9 + vec3(u_Time, u_Time, u_Time), 2, 0.5) * 0.1;
     return gain(0.5, 1.0 + 2.0 * (boostFromNormal + boostFromNoise));
 }
 
