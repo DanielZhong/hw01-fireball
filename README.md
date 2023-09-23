@@ -3,7 +3,6 @@
 ![](Demo.gif)
 
 ## Fireball scene features:
-
 * Perlin Noise Generation: A gradient noise function that produces natural-looking patterns, layered over multiple octaves for added complexity(FBM).
 
 * Triangle Wave: A non-sinusoidal waveform producing a triangular shape.
